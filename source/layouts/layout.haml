@@ -1,0 +1,13 @@
+!!! 5
+%html{ lang: "en-us" }
+  %head
+    %meta{ charset: "utf-8" }
+    %meta{ "http-equiv" => "X-UA-Compatible", content: "IE=Edge" }
+
+    %title= current_page.data.title || "Reid Beels"
+
+    = stylesheet_link_tag     "styles"
+    = javascript_include_tag  "all"
+
+  %body{ class: page_classes }
+    = yield
