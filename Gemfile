@@ -4,6 +4,10 @@ gem "middleman", "~> 3.3.11"
 gem "middleman-blog", "~> 3.5.3"
 gem "middleman-livereload"
 
+gem "bourbon"
+gem "neat"
+gem "bitters"
+
 # gem "middleman-syntax"
 # gem "middleman-automatic-clowncar"
 # gem "middleman-blog-drafts"
