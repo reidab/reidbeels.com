@@ -1,0 +1,22 @@
+{
+  "name": "reidbeels.com",
+  "version": "3.0.0",
+  "authors": [
+    "Reid Beels <mail@reidbeels.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "http://reidbeels.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "picturefill": "~2.3.1"
+  }
+}

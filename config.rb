@@ -22,6 +22,21 @@ page "/feed.xml", layout: false
 
 activate :directory_indexes
 
+sprockets.append_path File.join root, 'bower_components'
+sprockets.import_asset 'picturefill'
+
+# Photos
+
+data.photo_sets.values.flatten.each do |set|
+  proxy "/photos/#{set[:slug]}/index.html", "/photos/set.html", locals: { photo_set: set }, ignore: true
+
+  data.flickr_photo_sets[set[:id]][:photos].each do |photo|
+    proxy "/photos/#{set[:slug]}/#{photo[:id]}.html", "/photos/photo.html", locals: { photo: photo }, ignore: true
+  end
+end
+
+
+
 ###
 # Compass
 ###

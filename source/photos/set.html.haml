@@ -1,0 +1,8 @@
+= partial "photos/nav", locals: { active_set: photo_set[:id] }
+%h1= photo_set[:title]
+.photoset
+  - data.flickr_photo_sets[photo_set.id].photos.each do |photo|
+    %img{ src: photo.url_n,
+      srcset: %w(n z c k o).map{|size| %Q{#{photo["url_#{size}"]} #{photo["width_#{size}"]}w} }.join(', '),
+      sizes: "(min-width: 40em) 23.53966vw, 100vw",
+      alt: photo.title }

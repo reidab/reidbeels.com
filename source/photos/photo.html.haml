@@ -1,0 +1,5 @@
+.photo
+  %img{ src: photo.url_n,
+    srcset: %w(n z c k o).map{|size| %Q{#{photo["url_#{size}"]} #{photo["width_#{size}"]}w} }.join(', '),
+    sizes: "95vh",
+    alt: photo.title }

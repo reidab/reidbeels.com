@@ -6,16 +6,21 @@
 
     %title= current_page.data.title || "Reid Beels"
 
+    %script{ src: "//use.typekit.net/gtk2czs.js" }
+    %script
+      try { Typekit.load(); } catch(e) {}
+
     = stylesheet_link_tag     "styles"
     = javascript_include_tag  "all"
 
   %body{ class: page_classes }
-    %nav
-      = link_to "Reid Beels", "/index.html", class: 'site-title'
+    %nav.primary
+      = link_to "<strong>Reid</strong>Beels", "/index.html", class: 'site-title'
       %ul
-        %li= link_to "Projects", "/projects"
-        %li= link_to "Photos",   "/photos"
-        %li= link_to "Posts",    "/posts"
+        %li= link_to "Projects", "/projects", class: 'projects'
+        %li= link_to "Photos",   "/photos",   class: 'photos'
+        %li= link_to "Posts",    "/posts",    class: 'photos'
+        %li= link_to "Profile",  "/profile",  class: 'profile'
 
     %main
       = yield

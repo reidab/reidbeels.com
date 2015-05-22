@@ -2,4 +2,83 @@
 
 @import "bourbon"
 @import "base/base"
-@import "neat"
+
+$break-small: 600px
+$break-medium: 960px
+$break-large: 1500px
+
+$projects-background: #091444
+$photos-background: #222
+$photos-text: #ccc
+
+body
+  margin: 0
+
+nav
+  font-family: $heading-font-family
+
+nav.primary, body.photos main
+  padding: 1em
+  +display(flex)
+
+nav.primary
+  .site-title
+    +flex(1)
+    font-size: 1.2em
+  ul
+    +flex(1)
+    text-align: right
+  li
+    display: inline
+  a
+    +transition(all .2s ease-in-out)
+    margin-right: 1em
+  .profile
+    margin-right: 0
+  .projects:hover
+    background: $projects-background
+    color: #eee
+
+body.photos
+  background: $photos-background
+  color: $photos-text
+  nav.primary
+    a
+      color: $photos-text
+
+nav.photos
+  +flex(none)
+  width: 15em
+.photoset 
+  width: 100%
+  //+column-count(4)
+  +display(flex)
+  +flex-wrap(wrap)
+  +align-items(center)
+  img
+    display: block
+    +flex(1 1 33%)
+
+.photo
+  margin: 0 auto
+  img
+    width: auto
+    height: auto
+    max-width: 95vw
+    max-height: 95vh
+
+@media only screen and (max-width: $break-large)
+  .photoset ul
+    //+column-count(3)
+
+@media only screen and (max-width: $break-medium)
+  .photoset ul
+    //+column-count(2)
+
+@media only screen and (max-width: $break-small)
+  body.photos main
+    +flex-wrap(wrap)
+  nav.photos
+    flex: 0 0 100%
+
+  

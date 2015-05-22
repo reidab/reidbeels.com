@@ -1,0 +1,7 @@
+- active_set ||= nil
+%nav.photos
+  - data.photo_sets.each do |category, sets|
+    %h2= category
+    %ul
+      - sets.each do |set|
+        %li= link_to set[:title], "/photos/#{set[:slug]}", class: active_set == set[:id] ? 'active' : ''

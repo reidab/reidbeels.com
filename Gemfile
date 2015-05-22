@@ -8,6 +8,13 @@ gem "bourbon"
 gem "neat"
 gem "bitters"
 
+gem "rake"
+gem "flickraw"
+gem "dotenv"
+gem "ruby-progressbar"
+
+gem "pry"
+
 # gem "middleman-syntax"
 # gem "middleman-automatic-clowncar"
 # gem "middleman-blog-drafts"
