@@ -1,0 +1,15 @@
+- projects = current_page.children.group_by{|p| p.data.bucket }
+
+%header
+  %h1 I like to work on #{link_to 'design', '#design', class: 'design'}, #{link_to 'code', '#code', class: 'code'}, and #{link_to 'community', '#community', class: 'community'} projects.
+  %p 
+    This is my attempt to list everything I've made for myself and for communities I've been involved with over the years. 
+    For a more focused professional portfolio, take a look at my #{link_to 'work', '/work'} page.
+
+.big
+  %h2 Larger Works
+  = partial :list, locals: { projects: projects['large'] }
+
+.small
+  %h2 Smaller Things
+  = partial :list, locals: { projects: projects['small'] }

@@ -1,0 +1,4 @@
+%ul
+- projects.to_a.each do |project|
+  %li
+    = link_to project.data.title, project
