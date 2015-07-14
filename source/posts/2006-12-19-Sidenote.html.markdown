@@ -1,0 +1,18 @@
+---
+title: Sidenote
+date: '2006-12-19'
+tags:
+- life
+wp:post_id: '238'
+link: http://reidbeels.com/posts/2006/12/sidenote/
+---
+
+A while back I came across a piece of software called 
+[Sidenote](http://www.chatelp.org/?page_id=5), developed by 
+[Pierre Chatel](http://www.chatelp.org/). It's an incredibly neat little notepad app with a beautifully clean interface that sits on the side of your screen and pops out whenever you need it. At the time I found it originally, I didn't really see the need for its functionality, but it was so incredibly cool that I kept it around just in case. Last week, when I was looking for a way to keep track of all of the stuff that I had to get done before the end of the term, I dug out Sidenote.
+
+
+I soon discovered that, while it WAS great at storing my todo list, it also gave me an amazingly quick place to dump all of the other things that I wanted to get done, but couldn't. I started using it almost as a digital version of my moleskine and soon found that I was getting more done because my mind was clearer.
+
+
+![Sidenote Upgrade Animation](/wp-content/uploads/2006/12/migration_anim.gif)Of course, it's arguable that the real reason that I'm currently so enamored with the little program is because of one obscure design detail. When you upgrade to a newer version, the software tells you that it's going to upgrade your note database. Many developers would have just spent twenty seconds, stuck this message in a standard dialog, and called it good. Pierre went so far beyond this, creating the beautiful animation you see here and making the message fit his interface flawlessly. When I saw the animation, I was struck with this giddy euphoria. "People still care about details!" I thought, and it made my evening so much better. Thanks, Pierre.
