@@ -35,6 +35,31 @@ data.photo_sets.values.flatten.each do |set|
   end
 end
 
+helpers do
+  def all_photos
+    data.flickr_photo_sets.map{|id, ps| ps[:photos] }.flatten.uniq
+  end
+
+  def find_photo(id)
+    all_photos.find{|p| p[:id] == id.to_s }
+  end
+
+  def find_photoset_containing(id)
+    flickr_set_id, flickr_set = data.flickr_photo_sets.find{|set_id, ps| ps[:photos].find{|p| p[:id] == id.to_s } }
+    data.photo_sets.values.flatten.find{|ps| ps[:id] == flickr_set_id }
+  end
+
+  def photo_path(id)
+    ps = find_photoset_containing(id)
+    "/photos/#{ps[:slug]}/#{id}"
+  end
+
+  def sub_pages(dir)
+    sitemap.resources.select do |resource|
+      resource.path.start_with?(dir)
+    end
+  end
+end
 
 
 ###
