@@ -1,4 +1,4 @@
-@charset "utf-8"
+//@charset "utf-8"
 
 @import "bourbon"
 @import "base/base"
@@ -11,8 +11,57 @@ $projects-background: #091444
 $photos-background: #222
 $photos-text: #ccc
 
+html
+  box-sizing: border-box
+
+*, *:before, *:after
+  text-rendering: optimizeLegibility
+  box-sizing: inherit
+
 body
-  margin: 0
+  margin: 0 auto
+
+body.index
+  nav.primary
+    position: absolute
+    width: 100%
+    +linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0), $fallback: transparent)
+    a
+      color: #fff
+
+
+#splash
+  height: 100vh
+  overflow: hidden
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  max-width: 2454px
+  margin: 0 auto
+  position: relative
+  img
+    width: 100%
+
+  .photo_caption
+    display: block
+    position: absolute
+    right: 0
+    bottom: 5%
+    padding: .5em 2em .5em 1em
+    background: $photos-background
+    color: $photos-text
+    strong
+      display: block
+
+
+main
+  ul
+    list-style-type: disc
+  ol
+    list-style-type: decimal
+
+h1
+  font-size: 1.2em
 
 nav
   font-family: $heading-font-family
@@ -20,24 +69,54 @@ nav
 nav.primary, body.photos main
   padding: 1em
   +display(flex)
+  +align-items(baseline)
 
+%nav-primary-active
+  background: rgba(255, 255, 255, 0.2)
+  
 nav.primary
+  z-index: 99
   .site-title
     +flex(1)
-    font-size: 1.2em
+    font-size: 1.5em
+    font-weight: 400
   ul
+    text-transform: uppercase
+    font-weight: 700
     +flex(1)
     text-align: right
   li
     display: inline
   a
     +transition(all .2s ease-in-out)
-    margin-right: 1em
+  ul a
+    border-radius: .25em
+    padding: .25em .5em
   .profile
     margin-right: 0
-  .projects:hover
-    background: $projects-background
-    color: #eee
+
+body.work
+  +linear-gradient(#FB7C23, #51038d)
+  min-height: 300vh
+  color: #fff
+  a
+    color: #fff
+  nav.primary a.work
+    @extend %nav-primary-active
+
+body.projects
+  +linear-gradient(#01b089, #51038d)
+  min-height: 300vh
+  color: #fff
+  nav.primary a.projects
+    @extend %nav-primary-active
+  a
+    color: #fff
+  header
+    text-align: center
+  h2
+    padding-bottom: .4em
+    border-bottom: 1px solid rgba(255,255,255,0.3)
 
 body.photos
   background: $photos-background
@@ -47,6 +126,10 @@ body.photos
       @extend %nav-primary-active
     a
       color: $photos-text
+
+body.posts
+  nav.primary a.posts
+    @extend %nav-primary-active
 
 nav.photos
   +flex(none)

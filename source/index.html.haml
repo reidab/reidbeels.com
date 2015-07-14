@@ -1,1 +1,18 @@
-Welcome home
+- photo = find_photo(15425775355)
+
+:sass
+  #splash
+    background-image: url(#{photo[:url_o]})
+
+  @media only screen and (max-width: 1024px)
+    #splash
+      background-image: url(#{photo[:url_k]})
+
+  @media only screen and (max-width: 400px)
+    #splash
+      background-image: url(#{photo[:url_c]})
+
+#splash
+  %a.photo_caption{ href: photo_path(photo[:id]) }
+    %strong= photo[:title]
+    =Date.parse(photo[:datetaken]).strftime('%B, %e %Y')
