@@ -9,6 +9,9 @@
 
 bower_components/
 
+# Secrets!
+.env
+
 # Ignore the build directory
 /build
 
