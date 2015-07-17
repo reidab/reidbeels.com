@@ -1,5 +1,12 @@
 # Time.zone = "UTC"
 
+activate :directory_indexes
+
+sprockets.append_path File.join root, 'bower_components'
+sprockets.import_asset 'picturefill'
+
+# Posts
+
 activate :blog do |blog|
   blog.prefix = "posts"
   blog.layout = "post_layout"
@@ -20,10 +27,6 @@ end
 
 page "/feed.xml", layout: false
 
-activate :directory_indexes
-
-sprockets.append_path File.join root, 'bower_components'
-sprockets.import_asset 'picturefill'
 
 # Photos
 
@@ -60,16 +63,6 @@ helpers do
     end
   end
 end
-
-
-###
-# Compass
-###
-
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
 
 ###
 # Page options, layouts, aliases and proxies
