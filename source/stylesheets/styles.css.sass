@@ -21,50 +21,21 @@ html
 body
   margin: 0 auto
 
-body.index
-  nav.primary
-    position: absolute
-    width: 100%
-    +linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0), $fallback: transparent)
-    a
-      color: #fff
-
-
-#splash
-  height: 100vh
-  overflow: hidden
-  background-repeat: no-repeat
-  background-position: center
-  background-size: cover
-  max-width: 2454px
-  margin: 0 auto
-  position: relative
-  img
-    width: 100%
-
-  .photo_caption
-    display: block
-    position: absolute
-    right: 0
-    bottom: 5%
-    padding: .5em 2em .5em 1em
-    background: $photos-background
-    color: $photos-text
-    strong
-      display: block
-
-
 main
   ul
     list-style-type: disc
   ol
     list-style-type: decimal
+  a
+    text-decoration: underline
 
 h1
   font-size: 1.2em
 
 nav
   font-family: $heading-font-family
+
+
 
 nav.primary, body.photos main
   padding: 1em
@@ -95,17 +66,58 @@ nav.primary
   .profile
     margin-right: 0
 
+// Index
+
+body.index
+  nav.primary
+    position: absolute
+    width: 100%
+    +linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0), $fallback: transparent)
+    a
+      color: #fff
+
+#splash
+  height: 100vh
+  overflow: hidden
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  max-width: 2454px
+  margin: 0 auto
+  position: relative
+  img
+    width: 100%
+
+  .photo_caption
+    display: block
+    position: absolute
+    right: 0
+    bottom: 5%
+    padding: .5em 2em .5em 1em
+    background: $photos-background
+    color: $photos-text
+    strong
+      display: block
+
+// Work
+
 body.work
-  +linear-gradient(#FB7C23, #51038d)
+  +linear-gradient(#FE9B2D, #E72C3F, #51038d)
   min-height: 300vh
   color: #fff
   a
     color: #fff
+  a.button
+    border: 1px solid #fff
+    background: transparent
   nav.primary a.work
     @extend %nav-primary-active
 
+// Projects
+
 body.projects
-  +linear-gradient(#01b089, #51038d)
+  //+linear-gradient(#01b089, #51038d)
+  +linear-gradient(#00C59B, #51038d)
   min-height: 300vh
   color: #fff
   nav.primary a.projects
@@ -114,9 +126,13 @@ body.projects
     color: #fff
   header
     text-align: center
+
+body.work, body.projects
   h2
     padding-bottom: .4em
     border-bottom: 1px solid rgba(255,255,255,0.3)
+
+// Photos
 
 body.photos
   background: $photos-background
@@ -126,10 +142,6 @@ body.photos
       @extend %nav-primary-active
     a
       color: $photos-text
-
-body.posts
-  nav.primary a.posts
-    @extend %nav-primary-active
 
 nav.photos
   +flex(none)
@@ -152,6 +164,25 @@ nav.photos
     max-width: 95vw
     max-height: 95vh
 
+// Posts
+
+body.posts
+  background: #FAFAFA
+  nav.primary a.posts
+    @extend %nav-primary-active
+
+// Profile
+
+body.profile
+  +linear-gradient(#55C635, #EEE903)
+  min-height: 300vh
+  color: #fff
+  nav.primary a.profile
+    @extend %nav-primary-active
+  a
+    color: #fff
+
+
 @media only screen and (max-width: $break-large)
   .photoset ul
     //+column-count(3)
@@ -166,4 +197,4 @@ nav.photos
   nav.photos
     flex: 0 0 100%
 
-  
+

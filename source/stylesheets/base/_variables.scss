@@ -1,3 +1,5 @@
+$all-button-inputs: append($all-button-inputs, "a.button");
+
 // Typography
 $base-font-family: "adelle", $georgia;
 $heading-font-family: "europa", $helvetica;
