@@ -8,8 +8,12 @@
     %title= current_page.data.title || "Reid Beels"
 
     %script{ src: "//use.typekit.net/gtk2czs.js" }
-    %script
-      try { Typekit.load(); } catch(e) {}
+    :javascript
+      try { Typekit.load({
+        active: function() {
+          jQuery(".work-headline, .projects-headline, .profile-headline, .index-headline .work, .index-headline .projects, .index-headline .profile").slabText();
+        }
+      }); } catch(e) {}
 
     = stylesheet_link_tag     "styles"
     = javascript_include_tag  "all"
