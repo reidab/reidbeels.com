@@ -15,6 +15,13 @@ sprockets.import_asset 'jquery'
 sprockets.import_asset 'slabText/js/jquery.slabtext.js'
 sprockets.import_asset 'slabText/css/slabtext.css'
 
+# Work
+
+with_layout :portfolio_layout do
+  page "/work/*"
+end
+page "/work/index.html", layout: :layout
+
 # Posts
 
 activate :blog do |blog|
@@ -71,6 +78,19 @@ helpers do
     sitemap.resources.select do |resource|
       resource.path.start_with?(dir)
     end
+  end
+
+  def srcset_image_tag(img_path_template, options = {})
+    image_widths = options.delete(:srcset_widths) || []
+    default_width = options.delete(:default_width) || image_widths.first
+    raise ArgumentError, "could not determine default image width" unless default_width
+
+    image_sizes = Hash[image_widths.map{|w| [w, img_path_template.sub("[size]", w.to_s)] }]
+
+    default_image_path = image_sizes[default_width]
+    options[:srcset] ||= image_sizes.map{|width, path| "#{path} #{width}w" }.join(", ")
+
+    image_tag(default_image_path, options)
   end
 end
 

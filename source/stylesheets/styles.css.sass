@@ -126,21 +126,132 @@ body.index
     strong
       display: block
 
-// Work
+
+// --- Work ---
+
+$work-text-color: #fff
+$work-intro-color: #643C53
 
 body.work
   +linear-gradient(#FE9B2D, #E72C3F, #51038d)
   min-height: 300vh
-  color: #fff
+  color: $work-text-color
   a
-    color: #fff
+    color: $work-text-color
   a.button
-    border: 1px solid #fff
+    border: 1px solid $work-text-color
     background: transparent
   nav.primary a.work
     @extend %nav-primary-active
 
-// Projects
+.portfolio-display
+  h1
+    font-family: $base-font-family
+    color: $work-intro-color
+    margin: 0
+  figure
+    margin: 0.5em 0
+  figcaption
+    margin-bottom: 1em
+  .subhead
+    color: $work-intro-color
+  +media($large-screen)
+    p, ul, ol
+      +span-columns(8 of 12)
+
+.work-headline
+  font-weight: normal
+  color: $work-intro-color
+  .lets-build-something
+    font-family: "aw-conqueror-carved-two", $helvetica
+    line-height: 1
+  .wonderful
+    font-family: "aw-conqueror-carved", $helvetica
+    line-height: 0.8
+
+.work-intro
+  color: $work-intro-color
+  margin-top: 1em
+
+.moving-callout
+  background: rgba(255, 255, 255, 0.1)
+  padding: 0.5em
+  margin: 0 -0.5em 0 -0.5em
+
+.work-contact
+  margin: 1em 0
+
+.work-portfolio
+  padding-top: 1em
+  figure
+    border-radius: 5px
+    background: rgba(255, 255, 255, 0.1)
+    margin: 0
+    padding-bottom: 0.5em
+    margin-bottom: 1em
+    img
+      width: 100%
+      padding: 0.5em 0.5em 0
+    figcaption
+      padding: 0 0.5em
+  .title
+    text-decoration: none
+    font-weight: 600
+  .subtitle
+    font-size: 0.8em
+    color: rgba(255, 255, 255, 0.7)
+    margin: 0
+
++media($medium-screen)
+  .work-portfolio
+    figure
+      +span-columns(4)
+      +omega(2n)
+
++media($large-screen)
+  .work-headline
+    +span-columns(11 of 12)
+
+  .work-intro
+    +span-columns(8 of 12)
+
+  .work-contact
+    +span-columns(3 of 12)
+    +omega
+    .button
+      width: 100%
+      text-align: center
+      margin-bottom: .5em
+
+  +keyframes(planeIn)
+    from
+      +transform(translateX(-50px) scale(0.1,0.1))
+      opacity: 0
+    to
+      +transform(translateX(0) scale(1,1))
+      opacity: 1
+
+  .moving-callout
+    position: relative
+    &::before
+      opacity: 0
+      +animation(planeIn 0.6s ease-in-out)
+      +animation-iteration-count(1)
+      +animation-fill-mode(forwards)
+      +animation-delay(0.5s)
+      color: #fff
+      content: "✈︎"
+      font-size: 2em
+      position: absolute
+      top: -0.2em
+      left: -1em
+
+  .work-portfolio
+    +span-columns(12 of 12)
+    figure
+      +span-columns(4 of 12)
+      +omega(3n)
+
 
 // --- Projects ---
 

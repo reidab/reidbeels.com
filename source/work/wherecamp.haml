@@ -1,0 +1,17 @@
+---
+title: WhereCamp.org
+subtitle: Website
+list_image: work/list-wherecamp-[size].png
+order: 40
+---
+:markdown
+  WhereCamps are unconferences at the intersection of geography, technology, design, and culture. The first WhereCamp was held in 2007 in Sunnyvale, CA, on the weekend following the WHERE 2.0 conference. Since then, over 35 WhereCamp events have been held in 15 cities across the globe.
+
+  In 2013, I took over the global WhereCamp website and built a collaborative list of upcoming and historical events. The event listing and map are generated from [a GeoJSON file](https://github.com/reidab/wherecamp.org/blob/gh-pages/wherecamps.geojson) in the site's [GitHub repo](https://github.com/reidab/wherecamp.org).
+
+%p
+  = link_to "Visit <em>WhereCamp.org</em>", "http://wherecamp.org", class: "button"
+
+= link_to "http://wherecamp.org" do
+  = srcset_image_tag("work/detail-wherecamp-1-[size].png", srcset_widths: [700, 1400, 2800], default_width: 1400, sizes: "95vw", width: 1400)
+= srcset_image_tag("work/detail-wherecamp-2-[size].png", srcset_widths: [700, 1400, 2800], default_width: 1400, sizes: "95vw", width: 1400)

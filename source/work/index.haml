@@ -1,13 +1,27 @@
-:markdown
-  # Let's build something great!
+%h1.work-headline
+  %span.lets-build-something.slabtext Let’s build something
+  %span.wonderful.slabtext wonderful
 
-  I'm a design technologist who likes to make things. Fusing a design background with years of software development experience, I've helped both early-stage and established companies solve problems and turn ideas into reality. I'm particularly fond of maps, data visualization, and bright colors.
+.work-intro
+  %p
+    I'm a design technologist who likes to make things. Fusing a design background with years of software development experience, I've helped both early-stage and established companies solve problems and turn ideas into reality. My roles tend to involve full-stack web development with a smattering of user experience and product design.  I'm particularly fond of maps, data visualization, and bright colors.
 
-  ✈︎ In September, I'm moving to Stockholm, Sweden for a year. I'm currently seeking remote-friendly work or employment in Stockholm, either on a contract or full-time basis. I have experience working and communicating well on distributed teams.
+  %p.moving-callout
+    In September, I'm moving to Stockholm, Sweden for a year. I'm currently seeking remote-friendly work or employment in Stockholm, either on a contract or full-time basis. I have experience working and communicating well on distributed teams.
 
-  Want to work together? [Drop me a line.](mailto:mail@reidbeels.com)
+.work-contact
+  <a class="button" href="http://rsm.io/reid">View Résumé</a>
+  <a class="button" href="mailto:mail@reidbeels.com">Email Me</a>
 
-  <a class="button" href="http://rsm.io/reid">View Resume</a>
-
-  ## Selected Work
+.work-portfolio
+  %h2 Selected Design Work
+  .works
+    - current_page.children.to_a.sort_by{|p| p.data.order || 0 }.each do |work|
+      - next unless work.data.title
+      %figure
+        = link_to work do
+          = srcset_image_tag(work.data.list_image, srcset_widths: [350, 700, 1400], default_width: 700, sizes: "(min-width: 1000px) calc(92.2vw / 4), (min-width: 700px) 50vw, 95vw")
+        %figcaption
+          = link_to work.data.title, work, class: 'title'
+          %p.subtitle= work.data.subtitle
 

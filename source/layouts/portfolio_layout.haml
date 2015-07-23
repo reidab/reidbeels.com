@@ -1,0 +1,6 @@
+= wrap_layout :layout do
+  .portfolio-display
+    %h1= current_page.data.title
+    %p.subhead= current_page.data.subtitle
+    = yield
+
