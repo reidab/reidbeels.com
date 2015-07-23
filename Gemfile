@@ -4,6 +4,9 @@ gem "middleman", "~> 3.3.11"
 gem "middleman-blog", "~> 3.5.3"
 gem "middleman-livereload"
 
+gem 'middleman-imageoptim'
+gem 'middleman-deploy', '~> 1.0'
+
 gem "bourbon"
 gem "neat"
 gem "bitters"

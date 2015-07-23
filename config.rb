@@ -1,6 +1,13 @@
 # Time.zone = "UTC"
 
 activate :directory_indexes
+activate :imageoptim
+
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.host   = 'reidbeels.com'
+  deploy.path   = 'sites/reidbeels.com'
+end
 
 sprockets.append_path File.join root, 'bower_components'
 sprockets.import_asset 'picturefill'
