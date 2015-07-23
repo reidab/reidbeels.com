@@ -198,30 +198,37 @@ body.posts
   nav.primary a.posts
     @extend %nav-primary-active
 
-// Profile
+// --- Profile ---
 
 body.profile
-  +linear-gradient(#55C635, #EEE903)
-  min-height: 300vh
+  +linear-gradient(#00C59B, #55C635, #EEE903)
+  //+linear-gradient(#00C59B, #51038d)
+  min-height: 200vh
   color: #fff
   nav.primary a.profile
     @extend %nav-primary-active
   a
     color: #fff
 
+  .h-card
+    .p-name
+      display: none
+    .u-email, .u-tel, .keys
+      padding-left: 6.6em
+      display: block
+    .keys
+      margin-top: 0.5em
+    .type
+      color: rgba(0,0,0,0.4)
+      display: inline-block
+      width: 6em
+      margin-right: 0.5em
+      text-align: right
 
-@media only screen and (max-width: $break-large)
-  .photoset ul
-    //+column-count(3)
+.profile-headline
+  font-family: "aw-conqueror-carved-three", $helvetica
 
-@media only screen and (max-width: $break-medium)
-  .photoset ul
-    //+column-count(2)
-
-@media only screen and (max-width: $break-small)
-  body.photos main
-    +flex-wrap(wrap)
-  nav.photos
-    flex: 0 0 100%
-
++media($large-screen)
+  .profile-headline
+    +span-columns(11 of 12)
 
