@@ -2,6 +2,46 @@ require 'dotenv/tasks'
 require 'yaml'
 require 'flickraw'
 require 'ruby-progressbar'
+require 'fileutils'
+
+task :resize_images do
+  root_path = File.expand_path('..', __FILE__)
+  portfolio_images_path = File.join(root_path, 'portfolio_images')
+
+  %w(list detail).each do |type|
+    Dir.foreach( File.join(portfolio_images_path, type) ) do |file|
+      image_path = File.join(portfolio_images_path, type, file)
+      extension  = File.extname(file)
+      base_name  = File.basename(file, extension)
+      target_dir = File.join(root_path, 'source', 'images', 'work')
+      FileUtils.mkdir_p(target_dir)
+
+      next if extension.empty?
+
+      size_check = `sips --getProperty pixelWidth #{image_path}`
+      size_match = size_check.match(/pixelWidth: (\d+)/)
+      orig_size  = size_match.captures.first.to_i
+
+      puts "#{image_path} (#{orig_size}px)"
+
+      [orig_size, orig_size/2, orig_size/4].each do |size|
+        target_path = File.join(target_dir, "#{type}-#{base_name}-#{size}#{extension}")
+
+        if File.exist?(target_path)
+          puts "(#{size})→ exists: #{target_path}"
+        else
+          if size == orig_size
+            FileUtils.cp(image_path, target_path)
+          else
+            `sips -Z #{size} #{image_path} --out #{target_path}`
+          end
+
+          puts "(#{size})→ #{target_path}"
+        end
+      end
+    end
+  end
+end
 
 task :update_flickr_info => :dotenv do
   FlickRaw.api_key = ENV['FLICKR_API_KEY']
