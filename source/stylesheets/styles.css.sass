@@ -78,15 +78,30 @@ nav.primary
   .profile
     margin-right: 0
 
-// Index
+
+// --- Index ---
 
 body.index
-  nav.primary
-    position: absolute
-    width: 100%
-    +linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0), $fallback: transparent)
-    a
-      color: #fff
+  a
+    color: #fff
+    text-decoration: none
+  +linear-gradient(#110C4B, #51038d)
+  min-height: 100vh
+  //
+    nav.primary
+      ul
+        display: none
+
+.index-headline
+  color: #fff
+  .work
+    font-family: "aw-conqueror-carved-two", $helvetica
+  .projects
+    font-family: "aw-conqueror-inline", $helvetica
+  .profile
+    font-family: "aw-conqueror-carved-three", $helvetica
+  +media($large-screen)
+    +span-columns(8 of 12)
 
 #splash
   height: 100vh
