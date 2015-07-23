@@ -95,10 +95,6 @@ body.index
     text-decoration: none
   +linear-gradient(#110C4B, #51038d)
   min-height: 100vh
-  //
-    nav.primary
-      ul
-        display: none
 
 .index-headline
   color: #fff
@@ -299,44 +295,40 @@ body.work, body.projects
     padding-bottom: .4em
     border-bottom: 1px solid rgba(255,255,255,0.3)
 
-// Photos
+// --- Photos ---
+  body.photos
+    background: $photos-background
+    color: $photos-text
+    nav.primary
+      a.photos
+        @extend %nav-primary-active
+      a
+        color: $photos-text
+  nav.photos
+    +flex(none)
+    width: 15em
+  .photoset
+    width: 100%
+    //+column-count(4)
+    +display(flex)
+    +flex-wrap(wrap)
+    +align-items(center)
+    img
+      display: block
+      +flex(1 1 33%)
+  .photo
+    margin: 0 auto
+    img
+      width: auto
+      height: auto
+      max-width: 95vw
+      max-height: 95vh
 
-body.photos
-  background: $photos-background
-  color: $photos-text
-  nav.primary
-    a.photos
+// --- Posts ---
+  body.posts
+    background: #FAFAFA
+    nav.primary a.posts
       @extend %nav-primary-active
-    a
-      color: $photos-text
-
-nav.photos
-  +flex(none)
-  width: 15em
-.photoset 
-  width: 100%
-  //+column-count(4)
-  +display(flex)
-  +flex-wrap(wrap)
-  +align-items(center)
-  img
-    display: block
-    +flex(1 1 33%)
-
-.photo
-  margin: 0 auto
-  img
-    width: auto
-    height: auto
-    max-width: 95vw
-    max-height: 95vh
-
-// Posts
-
-body.posts
-  background: #FAFAFA
-  nav.primary a.posts
-    @extend %nav-primary-active
 
 // --- Profile ---
 
