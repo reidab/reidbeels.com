@@ -2,10 +2,8 @@
 
 @import "bourbon"
 @import "base/base"
+@import "neat"
 
-$break-small: 600px
-$break-medium: 960px
-$break-large: 1500px
 @import "slabText/css/slabtext"
 
 $projects-background: #091444
@@ -20,26 +18,40 @@ html
   box-sizing: inherit
 
 body
-  margin: 0 auto
-
-main
-  ul
-    list-style-type: disc
-  ol
-    list-style-type: decimal
-  a
-    text-decoration: underline
+  margin: 0
 
 h1
   font-size: 1.2em
 
+// --- Layout ---
+
+.container
+  +outer-container
+  margin: 0 auto
+  width: 95%
+
 nav
+  font-size: 18px
   font-family: $heading-font-family
 
+main
+  +media($large-screen)
+    +span-columns(12)
+    +shift(1)
+  ul
+    @extend %default-ul
+  ol
+    @extend %default-ol
+  a
+    text-decoration: underline
 
+footer
+  padding: 3em
 
-nav.primary, body.photos main
-  padding: 1em
+// --- Primary Navigation ---
+
+nav.primary
+  padding: 1em 0
   +display(flex)
   +align-items(baseline)
 
@@ -47,7 +59,6 @@ nav.primary, body.photos main
   background: rgba(255, 255, 255, 0.2)
   
 nav.primary
-  z-index: 99
   .site-title
     +flex(1)
     font-size: 1.5em
@@ -55,7 +66,7 @@ nav.primary
   ul
     text-transform: uppercase
     font-weight: 700
-    +flex(1)
+    +flex(2)
     text-align: right
   li
     display: inline

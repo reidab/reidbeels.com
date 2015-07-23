@@ -1,11 +1,15 @@
 $all-button-inputs: append($all-button-inputs, "a.button");
 
+$break-medium: 700px;
+$break-large: 1000px;
+$break-x-large: 1500px;
+
 // Typography
 $base-font-family: "adelle", $georgia;
 $heading-font-family: "europa", $helvetica;
 
 // Font Sizes
-$base-font-size: 1em;
+$base-font-size: 20px;
 
 // Line height
 $base-line-height: 1.6;
