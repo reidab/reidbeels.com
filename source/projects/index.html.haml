@@ -1,15 +1,31 @@
-- projects = current_page.children.group_by{|p| p.data.bucket }
+-# projects = current_page.children.group_by{|p| p.data.bucket }
 
 %header
-  %h1 I like to work on #{link_to 'design', '#design', class: 'design'}, #{link_to 'code', '#code', class: 'code'}, and #{link_to 'community', '#community', class: 'community'} projects.
+  %h1.projects-headline
+    %span.hacks-experiments.slabtext Hacks, Experiments
+    %span.volunteer-endeavors.slabtext &amp; volunteer endeavors
   %p 
     This is my attempt to list everything I've made for myself and for communities I've been involved with over the years. 
-    For a more focused professional portfolio, take a look at my #{link_to 'work', '/work'} page.
 
-.big
-  %h2 Larger Works
-  = partial :list, locals: { projects: projects['large'] }
+.projects-list
+  .portland-tech
+    %h2 Portland Tech Community Organizing
+    %p Through event planning, infrastructure building, general rabble-rousing, I've been involved in the Portland tech community since 2007.
+    -# = partial :list, locals: { projects: projects['large'] }
+    :markdown
+      - In 2008, I co-founded [Calagator](http://calagator.org), Portland's tech calendar, and have been a core developer and project leader through eight years of development.
+      - I've been involved with [Open Source Bridge](http://opensourcebridge.org) since it began, designed its logo, and have served as conference co-chair for the past five years.
+      - Open Source Bridge spawned an open source project to collect proposals and manage the event schedule: [OpenConferenceWare](https://github.com/osbridge/openconferenceware).
+      - I was one of the founding directors of [Stumptown Syndicate](http://stumptownsyndicate.org), a nonprofit dedicated to creating resilient, radically inclusive tech and maker communities in Portland through events and education.
+      - [ePDX](http://epdx.org) is a directory of the people, projects, groups and companies that make up Portland's tech world. [Citizenry](https://github.com/reidab/citizenry), its open source codebase, has been used by other communities to run similar directories (and was translated into French).
+      - I co-founded and designed materials for [WhereCampPDX](http://wherecamppdx.org), Portland's annual unconference at the  intersection of geography, technology, design, and culture. 
+      - In various capacities, I've worked to organize [BarCamp Portland](http://barcampportland.org), [Ignite Portland](http://igniteportland.org), the [Portland Ruby Brigade](http://pdxruby.org), and many other events and gatherings.
 
-.small
-  %h2 Smaller Things
-  = partial :list, locals: { projects: projects['small'] }
+  .small
+    %h2 Other Projects
+    -# = partial :list, locals: { projects: projects['small'] }
+    :markdown
+      - [WhereCamp.org](http://wherecamp.org) - the global WhereCamp website
+      - [chef-atheme-services](https://github.com/reidab/chef-atheme-services) - a Chef cookbook to install and configure the [Atheme IRC Services](http://atheme.net/atheme.html)
+      - [Papernet](https://github.com/reidab/Papernet) - a Mac web browser for debugging print stylesheets
+      - [sentence_splitter](https://github.com/reidab/sentence_splitter) - A port of perl's Lingua::EN::Sentence to Ruby

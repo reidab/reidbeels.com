@@ -142,17 +142,38 @@ body.work
 
 // Projects
 
+// --- Projects ---
+
 body.projects
-  //+linear-gradient(#01b089, #51038d)
   +linear-gradient(#00C59B, #51038d)
-  min-height: 300vh
+  min-height: 200vh
   color: #fff
   nav.primary a.projects
     @extend %nav-primary-active
   a
     color: #fff
-  header
-    text-align: center
+
+.projects-headline
+  .hacks-experiments
+    font-family: "aw-conqueror-inline", $helvetica
+    line-height: 1
+  .volunteer-endeavors
+    font-family: "aw-conqueror-carved-two", $helvetica
+    line-height: 1
+
+.projects-list
+  margin-top: 1.5em
+
+
++media($large-screen)
+  .projects-list
+    h2
+      +span-columns(12 of 12)
+    p, ul, ol
+      +span-columns(8 of 12)
+
+  .projects header
+    +span-columns(11 of 12)
 
 body.work, body.projects
   h2
