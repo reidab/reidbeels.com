@@ -30,13 +30,13 @@ page "/feed.xml", layout: false
 
 # Photos
 
-data.photo_sets.values.flatten.each do |set|
-  proxy "/photos/#{set[:slug]}/index.html", "/photos/set.html", locals: { photo_set: set }, ignore: true
-
-  data.flickr_photo_sets[set[:id]][:photos].each do |photo|
-    proxy "/photos/#{set[:slug]}/#{photo[:id]}.html", "/photos/photo.html", locals: { photo: photo }, ignore: true
-  end
-end
+# data.photo_sets.values.flatten.each do |set|
+#   proxy "/photos/#{set[:slug]}/index.html", "/photos/set.html", locals: { photo_set: set }, ignore: true
+#
+#   data.flickr_photo_sets[set[:id]][:photos].each do |photo|
+#     proxy "/photos/#{set[:slug]}/#{photo[:id]}.html", "/photos/photo.html", locals: { photo: photo }, ignore: true
+#   end
+# end
 
 helpers do
   def all_photos
