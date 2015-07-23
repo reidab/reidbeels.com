@@ -17,6 +17,8 @@
     "tests"
   ],
   "dependencies": {
-    "picturefill": "~2.3.1"
+    "picturefill": "~2.3.1",
+    "jquery": "~2.1.4",
+    "slabText": "https://github.com/freqdec/slabText.git#~2.2.0"
   }
 }

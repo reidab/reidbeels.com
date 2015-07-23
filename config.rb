@@ -11,6 +11,9 @@ end
 
 sprockets.append_path File.join root, 'bower_components'
 sprockets.import_asset 'picturefill'
+sprockets.import_asset 'jquery'
+sprockets.import_asset 'slabText/js/jquery.slabtext.js'
+sprockets.import_asset 'slabText/css/slabtext.css'
 
 # Posts
 
