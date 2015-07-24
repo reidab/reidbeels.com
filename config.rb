@@ -7,6 +7,7 @@ activate :sitemap, hostname: "http://reidbeels.com"
 activate :deploy do |deploy|
   deploy.method = :rsync
   deploy.host   = 'reidbeels.com'
+  deploy.user   = 'reidab'
   deploy.path   = 'sites/reidbeels.com'
 end
 
