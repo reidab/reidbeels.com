@@ -20,7 +20,7 @@
       %link{ rel: "openid2.provider", href: "https://openid.stackexchange.com/openid/provider" }
       %link{ rel: "openid2.local_id", href: "https://openid.stackexchange.com/user/55a3ba78-817d-442b-8da1-e44abe5b4b37" }
 
-    %title= current_page.data.title || "Reid Beels"
+    %title= [current_page.data.title, "Reid Beels"].compact.join(" | ")
 
     %script{ src: "//use.typekit.net/gtk2czs.js" }
     :javascript
