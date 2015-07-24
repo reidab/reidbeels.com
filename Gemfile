@@ -6,6 +6,7 @@ gem "middleman-livereload"
 
 gem 'middleman-imageoptim'
 gem 'middleman-deploy', '~> 1.0'
+gem "middleman-sitemap"
 
 gem "bourbon"
 gem "neat"
@@ -19,13 +20,9 @@ gem "ruby-progressbar"
 gem "pry"
 
 # gem "middleman-syntax"
-# gem "middleman-automatic-clowncar"
 # gem "middleman-blog-drafts"
 # gem "middleman-build-reporter"
-# gem "middleman-deploy"
-# gem "middleman-imageoptim"
 # gem "middleman-meta-tags"
-# gem "middleman-sitemap"
 
 # For feed.xml.builder
 gem "builder", "~> 3.0"

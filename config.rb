@@ -2,6 +2,7 @@
 
 activate :directory_indexes
 activate :imageoptim
+activate :sitemap, hostname: "http://reidbeels.com"
 
 activate :deploy do |deploy|
   deploy.method = :rsync
