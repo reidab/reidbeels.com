@@ -8,6 +8,7 @@
 /.bundle
 
 bower_components/
+portfolio_images/
 
 # Secrets!
 .env
