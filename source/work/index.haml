@@ -8,7 +8,7 @@ title: Work
 
 .work-intro
   %p
-    I'm a design technologist who likes to make things. Fusing a design background with years of software development experience, I've helped both early-stage and established companies solve problems and turn ideas into reality. My roles tend to involve full-stack web development with a smattering of user experience and product design.  I'm particularly fond of maps, data visualization, and bright colors.
+    Fusing a design background with years of software development experience, I've helped both early-stage and established companies solve problems and turn ideas into reality. My roles tend to involve full-stack web development with a smattering of user experience and product design. In my ideal workflows, I'm quickly creating prototypes, iterating and refining them, then refactoring to produce clean, well-tested, production-ready work. I'm particularly fond of maps, data visualization, and bright colors.
 
   %p.moving-callout
     In September, I'm moving to Stockholm, Sweden for a year. I'm currently seeking remote-friendly work or employment in Stockholm, either on a contract or full-time basis. I have experience working and communicating well on distributed teams.
@@ -17,7 +17,12 @@ title: Work
   <a class="button" href="http://rsm.io/reid">View Résumé</a>
   <a class="button" href="mailto:mail@reidbeels.com">Email Me</a>
 
+.work-tech
+  %h2 Technical Expertise
+  :markdown
+    I started building things on the web around 1997, experimenting in hand-coded HTML, then Perl and PHP. Since 2007 I've built web apps, tools, and services primarily in Ruby, with occasional detours into Python and Node. On the front-end, I've built complex interfaces both in vanilla JavaScript and with the help of tools like Backbone, D3, and Angular. The language I'm most interested in playing with next is probably Elixir.
 .work-portfolio
+
   %h2 Selected Design Work
   .works
     - current_page.children.to_a.sort_by{|p| p.data.order || 0 }.each do |work|
