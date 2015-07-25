@@ -105,7 +105,8 @@ body.index
   .profile
     font-family: "aw-conqueror-carved-three", $helvetica
   +media($large-screen)
-    +span-columns(8 of 12)
+    +span-columns(7 of 12)
+    +shift(2 of 12)
 
 #splash
   height: 100vh
@@ -185,6 +186,9 @@ body.work
 .work-contact
   margin: 1em 0
 
+.work-tech
+  padding-top: 1.5em
+
 .work-portfolio
   padding-top: 1em
   figure
@@ -250,6 +254,11 @@ body.work
       top: -0.2em
       left: -1em
 
+  .work-tech
+    +span-columns(12 of 12)
+    p
+      +span-columns(8 of 12)
+
   .work-portfolio
     +span-columns(12 of 12)
     figure
@@ -296,14 +305,23 @@ body.work, body.projects
     border-bottom: 1px solid rgba(255,255,255,0.3)
 
 // --- Photos ---
-  body.photos
-    background: $photos-background
+body.photos
+  background: $photos-background
+  +linear-gradient(#04233C, #054355)
+  min-height: 100vh
+  color: $photos-text
+  nav.primary
+    a.photos
+      @extend %nav-primary-active
+    a
+      color: $photos-text
+  a
     color: $photos-text
-    nav.primary
-      a.photos
-        @extend %nav-primary-active
-      a
-        color: $photos-text
+  a.button
+    border: 1px solid $work-text-color
+    background: transparent
+
+//
   nav.photos
     +flex(none)
     width: 15em
