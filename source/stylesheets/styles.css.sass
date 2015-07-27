@@ -59,23 +59,21 @@ footer
 // --- Primary Navigation ---
 
 nav.primary
+  z-index: 99
+  position: relative
   padding: 1em 0
-  +display(flex)
-  +align-items(baseline)
 
 %nav-primary-active
   background: rgba(255, 255, 255, 0.2)
   
 nav.primary
   .site-title
-    +flex(1)
     font-size: 1.5em
     font-weight: 400
   ul
     text-transform: uppercase
     font-weight: 700
-    +flex(2)
-    text-align: right
+    margin-left: -0.3em
   li
     display: inline
   a
@@ -85,6 +83,17 @@ nav.primary
     padding: .25em .5em
   .profile
     margin-right: 0
+
++media(min-width $break-medium)
+  nav.primary
+    +display(flex)
+    +align-items(baseline)
+    .site-title
+      +flex(1)
+    ul
+      +flex(2)
+      text-align: right
+      margin-left: 0
 
 // --- Headlines ---
 
