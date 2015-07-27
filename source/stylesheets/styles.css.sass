@@ -86,6 +86,11 @@ nav.primary
   .profile
     margin-right: 0
 
+.headline
+  +transition(0.5s opacity)
+  font-size: 60px
+  font-weight: normal
+  line-height: 1
 
 // --- Index ---
 
@@ -278,12 +283,8 @@ body.projects
     color: #fff
 
 .projects-headline
-  .hacks-experiments
-    font-family: "aw-conqueror-inline", $helvetica
-    line-height: 1
-  .volunteer-endeavors
-    font-family: "aw-conqueror-carved-two", $helvetica
-    line-height: 1
+  font-family: "aw-conqueror-inline", $helvetica
+  line-height: 1
 
 .projects-list
   margin-top: 1.5em
@@ -320,6 +321,14 @@ body.photos
   a.button
     border: 1px solid $work-text-color
     background: transparent
+
+.photos-headline
+  font-family: "aw-conqueror-carved-four", $helvetica
+
++media($large-screen)
+  .photos header
+    +span-columns(11 of 12)
+
 
 //
   nav.photos
