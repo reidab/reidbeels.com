@@ -1,4 +1,4 @@
 //= require jquery
-//= require slabText/js/jquery.slabtext.js
+//= require jquery.slabtext.custom
 //= require picturefill
-//= require_tree .
+//= require site

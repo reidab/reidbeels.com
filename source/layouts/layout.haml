@@ -28,6 +28,9 @@
       try { Typekit.load({
         active: function() {
           jQuery(".headline").slabText();
+
+          // Workaround for odd font rendering in Safari
+          jQuery(window).trigger('resize');
         }
       }); } catch(e) {}
 
