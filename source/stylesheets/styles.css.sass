@@ -86,11 +86,20 @@ nav.primary
   .profile
     margin-right: 0
 
+// --- Headlines ---
+
+.wf-loading .headline, .slabtexted .slabtextinactive
+  +transition(0s opacity)
+  opacity: 0
+
 .headline
   +transition(0.5s opacity)
   font-size: 60px
   font-weight: normal
   line-height: 1
+
+.slabtext
+  display: block
 
 // --- Index ---
 
@@ -103,12 +112,7 @@ body.index
 
 .index-headline
   color: #fff
-  .work
-    font-family: "aw-conqueror-carved-two", $helvetica
-  .projects
-    font-family: "aw-conqueror-inline", $helvetica
-  .profile
-    font-family: "aw-conqueror-carved-three", $helvetica
+  font-family: "aw-conqueror-carved-two", $helvetica
   +media($large-screen)
     +span-columns(7 of 12)
     +shift(2 of 12)
